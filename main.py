@@ -1,15 +1,22 @@
 from langchain.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
+from langchain.embeddings import OpenAIEmbeddings
 from dotenv import load_dotenv
 
 load_dotenv()
 
-text_splitter = CharacterTextSplitter(separator="\n", chunk_size=200, chunk_overlap=0)
+embeddings = OpenAIEmbeddings()
 
-loader = TextLoader("facts.txt")
+emb = embeddings.embed_query("hi there")
 
-docs = loader.load_and_split(text_splitter=text_splitter)
+print(emb)
 
-for doc in docs:
-    print(doc.page_content)
-    print("\n")
+# text_splitter = CharacterTextSplitter(separator="\n", chunk_size=200, chunk_overlap=0)
+
+# loader = TextLoader("facts.txt")
+
+# docs = loader.load_and_split(text_splitter=text_splitter)
+
+# for doc in docs:
+#     print(doc.page_content)
+#     print("\n")
