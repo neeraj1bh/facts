@@ -4,13 +4,17 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-langchain = "==0.0.352"
-openai = "==0.27.8"
+langchain = "*"
+openai = "*"
 python-dotenv = "==1.0.0"
 tiktoken = "*"
 chromadb = "*"
+matplotlib = "*"
+numpy = "*"
+langchain-openai = "*"
 
 [dev-packages]
+ipykernel = "*"
 
 [requires]
 python_version = "3.11"
